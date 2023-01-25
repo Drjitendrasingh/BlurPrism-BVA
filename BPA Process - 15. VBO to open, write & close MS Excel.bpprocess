@@ -1,0 +1,146 @@
+﻿<process name="15. VBO to open, write &amp; close MS Excel" version="1.0" bpversion="7.1.2.3518" narrative="15. VBO to open, write &amp; close MS Excel" byrefcollection="true" preferredid="8474662b-035c-4268-8e65-fd12c4f762b5">
+  <view>
+    <camerax>15</camerax>
+    <cameray>48</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="2cea7d07-b1d2-49d5-abea-b31cfd3ec2d1" name="Start" type="Start">
+    <display x="15" y="-105" />
+    <font family="Segoe UI" size="16" style="Bold" color="000000" />
+    <onsuccess>02fc602e-4bb3-4eea-bd97-6b54784c24b6</onsuccess>
+  </stage>
+  <stage stageid="29e6619e-42c0-46e9-9ffc-36694f3df4cf" name="End" type="End">
+    <display x="15" y="165" />
+    <font family="Segoe UI" size="16" style="Bold" color="000000" />
+  </stage>
+  <stage stageid="2e2a6959-8dd6-4c7e-ac10-bdab7478748d" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="eabcb37f-e30e-4064-9322-09b8b2a53386" name="Coll" type="Collection">
+    <display x="165" y="-45" w="150" h="120" />
+    <font family="Segoe UI" size="16" style="Bold" color="FF0000" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Roll Number" type="number" />
+      <field name="Name" type="text" />
+      <field name="Avg Marks" type="number" />
+      <field name="Grade" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="Roll Number" type="number" value="10" />
+        <field name="Name" type="text" value="RAVI" />
+        <field name="Avg Marks" type="number" value="70" />
+        <field name="Grade" type="text" value="B" />
+      </row>
+      <row>
+        <field name="Roll Number" type="number" value="20" />
+        <field name="Name" type="text" value="KAVI" />
+        <field name="Avg Marks" type="number" value="90" />
+        <field name="Grade" type="text" value="A" />
+      </row>
+      <row>
+        <field name="Roll Number" type="number" value="30" />
+        <field name="Name" type="text" value="RAM" />
+        <field name="Avg Marks" type="number" value="50" />
+        <field name="Grade" type="text" value="C" />
+      </row>
+      <row>
+        <field name="Roll Number" type="number" value="40" />
+        <field name="Name" type="text" value="ALEX" />
+        <field name="Avg Marks" type="number" value="80" />
+        <field name="Grade" type="text" value="A" />
+      </row>
+      <row>
+        <field name="Roll Number" type="number" value="50" />
+        <field name="Name" type="text" value="MIKE" />
+        <field name="Avg Marks" type="number" value="39" />
+        <field name="Grade" type="text" value="D" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="02fc602e-4bb3-4eea-bd97-6b54784c24b6" name="MS Excel VBO::Create Instance" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-60" w="150" h="30" />
+    <font family="Segoe UI" size="16" style="Regular" color="FF0000" />
+    <inputs>
+      <input type="flag" name="Enable Events" friendlyname="Enable Events" narrative="Flag to indicate that events should be enabled / disabled on the attached instance - defaulted to True" expr="" />
+    </inputs>
+    <outputs>
+      <output type="number" name="handle" friendlyname="handle" narrative="An integer which can be used to identify the created instance in subsequent actions" stage="handle" />
+    </outputs>
+    <onsuccess>22895a31-12d5-4368-ae55-26bf982af6b2</onsuccess>
+    <resource object="MS Excel VBO" action="Create Instance" />
+  </stage>
+  <stage stageid="e3659cba-2d80-415a-8af2-f1129c0790cb" name="handle" type="Data">
+    <display x="135" y="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="22895a31-12d5-4368-ae55-26bf982af6b2" name="MS Excel VBO::Open Workbook" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-15" w="150" h="30" />
+    <font family="Segoe UI" size="16" style="Regular" color="FF0000" />
+    <inputs>
+      <input type="number" name="handle" friendlyname="handle" narrative="The integer handle identifying the instance on which the required workbook should be opened. The default of zero indicates the currently active instance." expr="[handle]" />
+      <input type="text" name="File name" friendlyname="File name" narrative="The path and name of the file which should be opened." expr="&quot;E:\JK\day&quot;" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Workbook Name" friendlyname="Workbook Name" narrative="The name used by Excel to identify the workbook - usually this is the file name (without the path)." stage="Workbook Name" />
+    </outputs>
+    <onsuccess>a297ce1a-605d-42a1-b6be-f5c8b1b2794d</onsuccess>
+    <resource object="MS Excel VBO" action="Open Workbook" />
+  </stage>
+  <stage stageid="a297ce1a-605d-42a1-b6be-f5c8b1b2794d" name="MS Excel VBO::Write Collection" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="30" w="150" h="30" />
+    <font family="Segoe UI" size="16" style="Regular" color="FF0000" />
+    <inputs>
+      <input type="number" name="handle" friendlyname="handle" narrative="The integer handle identifying the instance on which the specified collection should be written. The default of zero indicates the currently active instance." expr="[handle]" />
+      <input type="text" name="Workbook Name" friendlyname="Workbook Name" narrative="The name of the workbook within which the data should be written. The default empty value indicates the current workbook within the specified instance." expr="[Workbook Name]" />
+      <input type="collection" name="Collection" friendlyname="Collection" narrative="The collection containing the data which should be written to the worksheet." expr="[Coll]" />
+      <input type="text" name="Worksheet Name" friendlyname="Worksheet Name" narrative="The name of the worksheet on which the given data should be written. The default empty value indicates the current sheet within the specified workbook." expr="[Workbook Name]" />
+      <input type="text" name="Cell Reference" friendlyname="Cell Reference" narrative="The reference at which the collection should be written." expr="&quot;A1&quot;" />
+      <input type="flag" name="Include Column Names" friendlyname="Include Column Names" narrative="True to indicate that the column names from the collection should be written out as the first row; False to ignore the column names and just write out the data." expr="True" />
+    </inputs>
+    <onsuccess>3fc4d397-fb55-401d-a76c-c55c5ae8e959</onsuccess>
+    <resource object="MS Excel VBO" action="Write Collection" />
+  </stage>
+  <stage stageid="3fc4d397-fb55-401d-a76c-c55c5ae8e959" name="MS Excel VBO::Save Workbook" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="75" w="150" h="30" />
+    <font family="Segoe UI" size="16" style="Regular" color="FF0000" />
+    <inputs>
+      <input type="number" name="handle" friendlyname="handle" narrative="The integer handle identifying the instance on which the workbook which should be saved resides. The default of zero indicates the currently active instance." expr="[handle]" />
+      <input type="text" name="Workbook Name" friendlyname="Workbook Name" narrative="The name of the workbook which should be saved" expr="[Workbook Name]" />
+    </inputs>
+    <onsuccess>208cbda6-c5a8-4f07-8e27-48d77cfabce9</onsuccess>
+    <resource object="MS Excel VBO" action="Save Workbook" />
+  </stage>
+  <stage stageid="208cbda6-c5a8-4f07-8e27-48d77cfabce9" name="MS Excel VBO::Close Instance" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="120" w="150" h="30" />
+    <font family="Segoe UI" size="16" style="Regular" color="FF0000" />
+    <inputs>
+      <input type="number" name="handle" friendlyname="handle" narrative="The integer handle identifying the instance to be closed. Zero indicates the currently active instance." expr="[handle]" />
+      <input type="flag" name="Save Changes" friendlyname="Save Changes" narrative="True to save the changes to the open workbooks on the instance, False to discard any changes. Default is False." expr="True" />
+    </inputs>
+    <onsuccess>29e6619e-42c0-46e9-9ffc-36694f3df4cf</onsuccess>
+    <resource object="MS Excel VBO" action="Close Instance" />
+  </stage>
+  <stage stageid="ff485ca8-a04a-463c-9e5d-ec0f1078db73" name="Workbook Name" type="Data">
+    <display x="285" y="-75" />
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+</process>

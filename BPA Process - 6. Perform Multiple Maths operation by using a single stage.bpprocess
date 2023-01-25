@@ -1,0 +1,90 @@
+﻿<process name="6. Perform Multiple Maths operation by using a single stage" version="1.0" bpversion="7.1.2.3518" narrative="6. Perform Multiple Maths operation by using a single stage" byrefcollection="true" preferredid="d7547eeb-3c44-480a-b0c7-f93a578ebb71">
+  <view>
+    <camerax>-59</camerax>
+    <cameray>-42</cameray>
+    <zoom version="2">1.5625</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="67cb8a31-cff7-4ab1-8947-878b56bae65b" name="Start" type="Start">
+    <display x="-45" y="-165" w="90" h="60" />
+    <onsuccess>033e77e5-7487-43f7-b832-733e88832bd2</onsuccess>
+  </stage>
+  <stage stageid="a498d3a8-af01-4c7d-9627-4a7161b11d94" name="End" type="End">
+    <display x="-45" y="0" w="90" h="60" />
+  </stage>
+  <stage stageid="edb82ed9-5f02-40a9-8929-afb4ce03af3f" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-165" w="150" h="90" />
+  </stage>
+  <stage stageid="d0b3bf6b-b10c-4d2f-82bd-8083213f7d2c" name="Value1" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-225" y="-60" />
+    <datatype>number</datatype>
+    <initialvalue>25</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="5a8980a2-1e66-4871-907a-810fa5cb9cab" name="Value 2" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-165" y="-60" />
+    <datatype>number</datatype>
+    <initialvalue>5</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ffcfc379-f473-4744-924e-4ca915fa6edc" name="Add" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-225" y="0" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ed05c2ed-1dd2-48e6-8602-6d74f3266f15" name="Sub" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-165" y="0" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="106dd822-8d61-405d-b946-0337f8ddd953" name="Mul" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-225" y="45" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="696dc1a6-62ec-43b3-af52-0f21dd2e55cc" name="Div" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-165" y="45" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="354745a0-00b0-4ac8-91f0-691e2cc70346" name="input" type="Block">
+    <loginhibit onsuccess="true" />
+    <narrative>input</narrative>
+    <display x="-270" y="-90" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="8bc78121-6781-407c-863d-479ea6da7706" name="Block2" type="Block">
+    <loginhibit onsuccess="true" />
+    <display x="-270" y="-15" w="150" h="90" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="033e77e5-7487-43f7-b832-733e88832bd2" name="Multi1" type="MultipleCalculation">
+    <loginhibit onsuccess="true" />
+    <display x="-45" y="-75" w="90" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="FF6600" />
+    <onsuccess>a498d3a8-af01-4c7d-9627-4a7161b11d94</onsuccess>
+    <steps>
+      <calculation expression="[Value1] + [Value 2]" stage="Add" />
+      <calculation expression="[Value1] - [Value 2]" stage="Sub" />
+      <calculation expression="[Value1] * [Value 2]" stage="Mul" />
+      <calculation expression="[Value1] / [Value 2]" stage="Div" />
+    </steps>
+  </stage>
+</process>

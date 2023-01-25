@@ -1,0 +1,78 @@
+﻿<process name="4. Add marks of 3 Subjects, Calculate &amp; store Total Marks also calculate Avg marks." version="1.0" bpversion="7.1.2.3518" narrative="4. 4. Add marks of 3 Subjects, Calculate &amp; store Total Marks also calculate Avg marks." byrefcollection="true" preferredid="e2eb092d-2029-4dc7-833f-c0f8d1b18f83">
+  <view>
+    <camerax>-105</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.5625</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="c9b1f2e4-536d-49d8-859b-0d996a49435a" name="Start" type="Start">
+    <display x="15" y="-120" w="120" h="60" />
+    <onsuccess>39a00d5c-08f0-4379-9902-523fce7c3d15</onsuccess>
+  </stage>
+  <stage stageid="03f9ccf4-9e7a-4bb3-94fc-5ed8bdaac31e" name="End" type="End">
+    <display x="15" y="90" w="120" h="60" />
+  </stage>
+  <stage stageid="a3c773c0-f046-48f5-beab-4ab6d7f884ef" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="8bc19c8b-1678-4759-8caa-f139cb2564fa" name="Maths" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-225" y="-15" />
+    <datatype>number</datatype>
+    <initialvalue>97</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a21224d3-74ae-4fbb-91e2-c88d7a4225e0" name="Physics" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-180" y="-15" />
+    <datatype>number</datatype>
+    <initialvalue>99</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="1d044863-e963-4ef7-9b19-8697698d558f" name="Chemistry" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-135" y="-15" />
+    <datatype>number</datatype>
+    <initialvalue>98</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="0128605c-e481-4f70-a863-2c861715e892" name="Input" type="Block">
+    <loginhibit onsuccess="true" />
+    <display x="-270" y="-45" w="165" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="91b6feab-c476-4563-bb27-32035754294b" name="Total Marks" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-210" y="60" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c4e7557c-ff6f-47d2-a8a3-09de2c494166" name="Avg Marks" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-165" y="60" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="23f5915b-bf5a-497b-8f85-7ef423d0d0d4" name="Output" type="Block">
+    <loginhibit onsuccess="true" />
+    <display x="-255" y="30" w="135" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="39a00d5c-08f0-4379-9902-523fce7c3d15" name="Total/ Avg" type="MultipleCalculation">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-15" w="150" h="90" />
+    <onsuccess>03f9ccf4-9e7a-4bb3-94fc-5ed8bdaac31e</onsuccess>
+    <steps>
+      <calculation expression="[Maths] + [Chemistry] + [Physics]" stage="Total Marks" />
+      <calculation expression="[Total Marks] / 3" stage="Avg Marks" />
+    </steps>
+  </stage>
+</process>

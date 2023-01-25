@@ -1,0 +1,143 @@
+﻿<process name="Day1 AD- Using Credentilas manager perform linkdln access" version="1.0" bpversion="7.1.2.3518" narrative="Day1 AD- Using Credentilas manager perform linkdln access" byrefcollection="true" type="object" runmode="Exclusive" preferredid="2c6294c3-4ceb-48e0-a45e-67f8ea1a51e1">
+  <appdef>
+    <element name="Application Root">
+      <id>c6e4c370-f2e1-4cb2-97d6-c730b00a3dbf</id>
+      <type>Application</type>
+      <basetype>Application</basetype>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+  </appdef>
+  <view>
+    <camerax>0</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <subsheet subsheetid="2625c938-6d42-479c-a3b7-343e62de14cd" type="CleanUp" published="True">
+    <name>Clean Up</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="fe956a69-f60d-4d5c-8717-f6a814b3e529" type="Normal" published="False">
+    <name>Action 1</name>
+    <view>
+      <camerax>-20</camerax>
+      <cameray>15</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="2b5cdce3-ab8d-4716-a626-457d6700de9c" name="Start" type="Start">
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>37699407-7d41-4574-9677-23f8bee34de7</onsuccess>
+  </stage>
+  <stage stageid="37699407-7d41-4574-9677-23f8bee34de7" name="End" type="End">
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="6946e9dd-843f-4147-ba42-51b23c60f8d5" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+    <references>
+      <reference>System.dll</reference>
+      <reference>System.Data.dll</reference>
+      <reference>System.Xml.dll</reference>
+      <reference>System.Drawing.dll</reference>
+    </references>
+    <imports>
+      <import>System</import>
+      <import>System.Drawing</import>
+      <import>System.Data</import>
+    </imports>
+    <language>visualbasic</language>
+    <globalcode><![CDATA[]]></globalcode>
+    <code><![CDATA[]]></code>
+  </stage>
+  <stage stageid="0c2546a0-5e1b-40fc-89b5-103998d17860" name="Clean Up" type="SubSheetInfo">
+    <subsheetid>2625c938-6d42-479c-a3b7-343e62de14cd</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="06663bad-5de9-4762-a99f-e36d69425eca" name="Start" type="Start">
+    <subsheetid>2625c938-6d42-479c-a3b7-343e62de14cd</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>f256e40b-3791-4a73-a28b-4a2c0f749859</onsuccess>
+  </stage>
+  <stage stageid="f256e40b-3791-4a73-a28b-4a2c0f749859" name="End" type="End">
+    <subsheetid>2625c938-6d42-479c-a3b7-343e62de14cd</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="62625f55-be04-454c-9f14-ebe60ccdecbd" name="Action 1" type="SubSheetInfo">
+    <subsheetid>fe956a69-f60d-4d5c-8717-f6a814b3e529</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="f709f7d4-12fd-4afc-b2e1-799eaf57716a" name="Start" type="Start">
+    <subsheetid>fe956a69-f60d-4d5c-8717-f6a814b3e529</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" w="90" h="60" />
+    <font family="Segoe UI" size="16" style="Bold" color="000000" />
+    <onsuccess>eb5f02c4-6c9a-4496-aa04-3857e58944a1</onsuccess>
+  </stage>
+  <stage stageid="47197026-4d1b-401b-9035-3868f0b556fb" name="End" type="End">
+    <subsheetid>fe956a69-f60d-4d5c-8717-f6a814b3e529</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" w="90" h="60" />
+    <font family="Segoe UI" size="16" style="Bold" color="000000" />
+  </stage>
+  <stage stageid="e841d064-00c4-40c9-8f90-20dfede0a706" name="linkedin access" type="Data">
+    <subsheetid>fe956a69-f60d-4d5c-8717-f6a814b3e529</subsheetid>
+    <loginhibit />
+    <display x="-210" y="15" w="180" h="90" />
+    <font family="Segoe UI" size="16" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">linkedin access</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="eb5f02c4-6c9a-4496-aa04-3857e58944a1" name="Faching Credentials for linkedin access" type="Action">
+    <subsheetid>fe956a69-f60d-4d5c-8717-f6a814b3e529</subsheetid>
+    <loginhibit onsuccess="true" />
+    <narrative>Get the specified set of credentials.
+
+An Exception will occur if access to the credentials is not allowed, based on the running Resource, Process and User.</narrative>
+    <display x="15" y="-15" w="150" h="60" />
+    <font family="Segoe UI" size="16" style="Bold" color="FF0000" />
+    <inputs>
+      <input type="text" name="Credentials Name" friendlyname="Credentials Name" narrative="The name of the credentials to get" expr="[linkedin access]" />
+    </inputs>
+    <outputs>
+      <output type="password" name="Password" friendlyname="Password" narrative="The password" stage="Password" />
+      <output type="text" name="Username" friendlyname="Username" narrative="The user name" stage="User Name" />
+      <output type="date" name="Expiry Date" friendlyname="Expiry Date" narrative="The expiry date" stage="" />
+      <output type="text" name="Status" friendlyname="Status" narrative="The status" stage="" />
+    </outputs>
+    <onsuccess>47197026-4d1b-401b-9035-3868f0b556fb</onsuccess>
+    <resource object="Blueprism.Automate.clsCredentialsActions" action="Get" />
+  </stage>
+  <stage stageid="7b539c60-a3ec-4496-ba68-4e302993ae82" name="User Name" type="Data">
+    <subsheetid>fe956a69-f60d-4d5c-8717-f6a814b3e529</subsheetid>
+    <loginhibit />
+    <display x="-270" y="90" w="120" h="30" />
+    <font family="Segoe UI" size="16" style="Bold" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f5335147-3845-4d70-b20d-e8966d635807" name="Password" type="Data">
+    <subsheetid>fe956a69-f60d-4d5c-8717-f6a814b3e529</subsheetid>
+    <loginhibit />
+    <display x="-165" y="90" w="90" h="30" />
+    <font family="Segoe UI" size="16" style="Bold" color="000000" />
+    <datatype>password</datatype>
+    <initialvalueenc>
+    </initialvalueenc>
+    <private />
+    <alwaysinit />
+  </stage>
+</process>

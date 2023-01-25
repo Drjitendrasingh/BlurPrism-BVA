@@ -1,0 +1,50 @@
+﻿<process name="1. ADD TWO NUMBER &amp;DISPLAY THE RESULT" version="1.0" bpversion="7.1.2.3518" narrative="Add two Numers &amp; display the result" byrefcollection="true" preferredid="c62c6bcf-49bb-4e5d-86ea-e62d874364c3">
+  <view>
+    <camerax>-21</camerax>
+    <cameray>7</cameray>
+    <zoom version="2">1.875</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="1e173fd6-4151-4b97-ae22-55e904d50adf" name="Start" type="Start">
+    <display x="120" y="-75" w="90" h="60" />
+    <onsuccess>8027deca-d43d-425b-b1bc-0a80ba63a6f6</onsuccess>
+  </stage>
+  <stage stageid="5393596a-ff59-4e5a-8136-bafd841faead" name="End" type="End">
+    <display x="120" y="105" w="90" h="60" />
+  </stage>
+  <stage stageid="ac6ea4e7-e739-4588-8782-91a549f290af" name="Stage1" type="ProcessInfo">
+    <display x="-180" y="-75" w="150" h="120" />
+  </stage>
+  <stage stageid="a8af81a8-147f-45ad-87e8-2b74e52ee750" name="Value1" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-45" y="-75" w="90" h="60" />
+    <datatype>number</datatype>
+    <initialvalue>70</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="4f03dba1-f72b-4146-858a-b94bc86a6cd4" name="Value 2" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-45" y="15" w="90" h="60" />
+    <datatype>number</datatype>
+    <initialvalue>21</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="0d2fdc58-c732-4529-93d7-cf2b9ceee2d8" name="Result" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-45" y="105" w="90" h="60" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8027deca-d43d-425b-b1bc-0a80ba63a6f6" name="Addition " type="Calculation">
+    <loginhibit onsuccess="true" />
+    <narrative>Value 1 add Value 2 = Result</narrative>
+    <display x="120" y="15" w="90" h="60" />
+    <onsuccess>5393596a-ff59-4e5a-8136-bafd841faead</onsuccess>
+    <calculation expression="[Value1] + [Value 2]" stage="Result" />
+  </stage>
+</process>

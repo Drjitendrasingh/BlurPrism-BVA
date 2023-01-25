@@ -1,0 +1,83 @@
+﻿<process name="17. Exception Handling using Calculation stage to show the data type" version="1.0" bpversion="7.1.2.3518" narrative="17. Exception Handling using Calculation stage to show the data type" byrefcollection="true" preferredid="5c2cc56b-629e-457a-a54b-da2771037505">
+  <view>
+    <camerax>146</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.5625</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="1dafd35e-2d13-4e31-a33f-006cfa9409e8" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="4f091681-1693-4442-90c1-5f6132ceb388" name="Start" type="Start">
+    <display x="-60" y="-135" />
+    <font family="Segoe UI" size="12" style="Bold" color="000000" />
+    <onsuccess>4443d49e-fdf5-4bf1-8cc9-a75741519290</onsuccess>
+  </stage>
+  <stage stageid="bf8f9adc-c918-4e6c-8e2e-f8384b712095" name="End" type="End">
+    <display x="-60" y="-15" />
+    <font family="Segoe UI" size="12" style="Bold" color="000000" />
+  </stage>
+  <stage stageid="4443d49e-fdf5-4bf1-8cc9-a75741519290" name="Division" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <display x="-60" y="-75" />
+    <font family="Segoe UI" size="12" style="Bold" color="FF0000" />
+    <onsuccess>bf8f9adc-c918-4e6c-8e2e-f8384b712095</onsuccess>
+    <calculation expression="10 / 0" stage="Result" />
+  </stage>
+  <stage stageid="8595aefb-559e-4784-b999-31a9471c7348" name="Result" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-15" y="-75" w="30" h="30" />
+    <font family="Segoe UI" size="10" style="Bold" color="FF0000" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ef3db2d8-ff17-4281-bce3-1130a2857666" name="Recover1" type="Recover">
+    <loginhibit />
+    <display x="30" y="-135" />
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+    <onsuccess>403e423b-aed5-4892-bcc7-1b567d8566d2</onsuccess>
+  </stage>
+  <stage stageid="0dab6a4a-409c-4dd9-95c7-cf50b890f163" name="Resume1" type="Resume">
+    <loginhibit />
+    <display x="30" y="-15" />
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+    <onsuccess>bf8f9adc-c918-4e6c-8e2e-f8384b712095</onsuccess>
+  </stage>
+  <stage stageid="8bc571bb-322a-4fe0-b5c0-b871fa3e9452" name="Exc Detail" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="150" y="-120" w="150" h="60" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c72cfeac-5322-4026-a923-f3c29eb6ec8d" name="Exc Type" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="165" y="-60" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="9c2b4961-8095-4a94-82a0-1b8adf2d27ab" name="Exp Stage" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-60" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="403e423b-aed5-4892-bcc7-1b567d8566d2" name="Multi1" type="MultipleCalculation">
+    <loginhibit onsuccess="true" />
+    <display x="30" y="-75" />
+    <onsuccess>0dab6a4a-409c-4dd9-95c7-cf50b890f163</onsuccess>
+    <steps>
+      <calculation expression="ExceptionDetail()" stage="Exc Detail" />
+      <calculation expression="ExceptionType()" stage="Exc Type" />
+      <calculation expression="ExceptionStage()" stage="Exp Stage" />
+    </steps>
+  </stage>
+</process>

@@ -1,0 +1,57 @@
+﻿<process name="7. Increment using circular path excercise" version="1.0" bpversion="7.1.2.3518" narrative="7. 7. Increment using circular path excercise" byrefcollection="true" preferredid="79b4be5c-5a54-4e96-b663-15adbc93c792">
+  <view>
+    <camerax>-45</camerax>
+    <cameray>-54</cameray>
+    <zoom version="2">1.5625</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="db2d17d2-d934-4ea3-bff0-5684d2bca2f2" name="Start" type="Start">
+    <display x="-15" y="-135" />
+    <onsuccess>e8e8b38a-ec87-4532-85f8-e0ea11f87f8c</onsuccess>
+  </stage>
+  <stage stageid="37807794-bc55-4f10-926a-58a647c4a7d1" name="End" type="End">
+    <display x="-15" y="60" />
+  </stage>
+  <stage stageid="6ac69663-d0ab-4ca8-a1ff-13a76d1b0720" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="e8e8b38a-ec87-4532-85f8-e0ea11f87f8c" name="Incement" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <display x="-15" y="-75" w="90" h="60" />
+    <onsuccess>b0ea65a9-1236-4620-be50-d0e6e2d45e4f</onsuccess>
+    <calculation expression="[Counter] + 1" stage="Counter" />
+  </stage>
+  <stage stageid="bbb8fa8a-6d68-47d0-9629-30b2795684bb" name="Counter" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-225" y="-15" w="90" h="60" />
+    <datatype>number</datatype>
+    <initialvalue>0</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="28ee50a8-9a6e-4a4b-978c-8f5d91550542" name="Max Count" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-150" y="-15" w="90" h="60" />
+    <datatype>number</datatype>
+    <initialvalue>5</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b0ea65a9-1236-4620-be50-d0e6e2d45e4f" name="C = MC" type="Decision">
+    <display x="-15" y="0" w="90" h="60" />
+    <decision expression="[Counter] = [Max Count]" />
+    <ontrue>37807794-bc55-4f10-926a-58a647c4a7d1</ontrue>
+    <onfalse>900409f2-002a-4071-ab0f-d00465c11b67</onfalse>
+  </stage>
+  <stage stageid="900409f2-002a-4071-ab0f-d00465c11b67" name="Anchor1" type="Anchor">
+    <loginhibit onsuccess="true" />
+    <display x="-90" y="0" w="10" h="10" />
+    <onsuccess>10accb03-3425-4228-b3bc-1448aa04617d</onsuccess>
+  </stage>
+  <stage stageid="10accb03-3425-4228-b3bc-1448aa04617d" name="Anchor2" type="Anchor">
+    <loginhibit onsuccess="true" />
+    <display x="-90" y="-75" w="10" h="10" />
+    <onsuccess>e8e8b38a-ec87-4532-85f8-e0ea11f87f8c</onsuccess>
+  </stage>
+</process>

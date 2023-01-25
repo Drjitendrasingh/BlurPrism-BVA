@@ -1,0 +1,61 @@
+﻿<process name="2. Find the larger between two Numbers" version="1.0" bpversion="7.1.2.3518" narrative="2. Find Larger between two numbers&#xD;&#xA;" byrefcollection="true" preferredid="5ddfb91d-7457-4d66-a904-33536f6d146d">
+  <view>
+    <camerax>9</camerax>
+    <cameray>7</cameray>
+    <zoom version="2">1.5625</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="951cc5ff-17d1-45f9-a1d7-469094728d0c" name="Start" type="Start">
+    <display x="15" y="-105" w="120" h="60" />
+    <onsuccess>0c20e199-b272-4c03-b7a3-b6eb2658a760</onsuccess>
+  </stage>
+  <stage stageid="7debeaa5-52b8-4831-a71a-ebb2d6668bbe" name="End" type="End">
+    <display x="15" y="120" w="90" h="60" />
+  </stage>
+  <stage stageid="40898266-5961-4ed3-a734-b9f2356aed8c" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="c871cf61-878b-4e2e-a236-26c4b5a16b80" name="A" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-180" y="-30" w="90" h="60" />
+    <datatype>number</datatype>
+    <initialvalue>30</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="555065ba-c465-4392-8c7f-508fc1d0cef6" name="B" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-180" y="30" w="90" h="60" />
+    <datatype>number</datatype>
+    <initialvalue>100</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8aad037b-8774-479a-b539-54ea37b00bb6" name="Result" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-180" y="90" w="90" h="60" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="0c20e199-b272-4c03-b7a3-b6eb2658a760" name="A&gt;B" type="Decision">
+    <display x="15" y="-30" w="90" h="60" />
+    <decision expression="[A] &gt; [B]" />
+    <ontrue>69043877-e046-44bf-a9f2-d8c801249fa2</ontrue>
+    <onfalse>7754b42f-c364-4cf1-82cf-6293b90eee58</onfalse>
+  </stage>
+  <stage stageid="69043877-e046-44bf-a9f2-d8c801249fa2" name="A&gt;" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <display x="-45" y="45" w="90" h="60" />
+    <onsuccess>7debeaa5-52b8-4831-a71a-ebb2d6668bbe</onsuccess>
+    <calculation expression="&quot;A is Larger&quot;" stage="Result" />
+  </stage>
+  <stage stageid="7754b42f-c364-4cf1-82cf-6293b90eee58" name="B&gt;" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <display x="90" y="45" w="90" h="60" />
+    <onsuccess>7debeaa5-52b8-4831-a71a-ebb2d6668bbe</onsuccess>
+    <calculation expression="&quot;B is Larger&quot;" stage="Result" />
+  </stage>
+</process>

@@ -1,0 +1,129 @@
+﻿<process name="11. Input &amp; Output parameters from main page to child Page" version="1.0" bpversion="7.1.2.3518" narrative="11. 11. Input &amp; Output parameters from main page to child Page" byrefcollection="true" preferredid="cb95dbcf-e713-4998-ba9d-110f9733f557">
+  <view>
+    <camerax>45</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.5625</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <subsheet subsheetid="47f15c03-2713-4429-b7bb-1e18f4645549" type="Normal" published="False">
+    <name>Child Page</name>
+    <view>
+      <camerax>67</camerax>
+      <cameray>63</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="7251e0fb-1eb4-4ec8-b6e1-709b07aa3e24" name="Start" type="Start">
+    <display x="15" y="-105" w="90" h="30" />
+    <font family="Segoe UI" size="16" style="Bold" color="FF0000" />
+    <onsuccess>51d5fe75-6eaf-4cbe-a185-fd87aa7ec42d</onsuccess>
+  </stage>
+  <stage stageid="d26e424d-ecb1-4646-bf20-de79c0da8256" name="End" type="End">
+    <display x="15" y="90" w="90" h="30" />
+    <font family="Segoe UI" size="16" style="Bold" color="FF0000" />
+  </stage>
+  <stage stageid="08e45c29-7b65-4010-8528-c1abea50c885" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="0bca6863-2d48-4666-be03-8a1cd091e8ef" name="Value 1" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-195" y="-30" w="90" h="60" />
+    <font family="Segoe UI" size="16" style="Bold" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue>101</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="40daff7d-5091-4aaf-ae75-df2eabf4f584" name="Value 2" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-120" y="-30" w="90" h="60" />
+    <font family="Segoe UI" size="16" style="Bold" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue>26</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="e8b19e65-4508-4e0a-beed-fc7c882497ba" name="Result_Main" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-165" y="60" w="90" h="60" />
+    <font family="Segoe UI" size="16" style="Bold" color="FF00FF" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d4ff29fe-0b8c-4b62-b47c-53fd9b4d5833" name="Child Page" type="SubSheetInfo">
+    <subsheetid>47f15c03-2713-4429-b7bb-1e18f4645549</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="34a77162-8ef1-4213-98cb-c2ca780c64af" name="Start" type="Start">
+    <subsheetid>47f15c03-2713-4429-b7bb-1e18f4645549</subsheetid>
+    <display x="15" y="-105" w="120" h="60" />
+    <font family="Segoe UI" size="16" style="Bold" color="000000" />
+    <inputs>
+      <input type="number" name="Value 1 main" narrative="Value 1 from Main Page" stage="Data-1" />
+      <input type="number" name="Value 2 Main" narrative="Value 2 from Main Page" stage="Data-2" />
+    </inputs>
+    <onsuccess>213412ee-07b0-4b44-a500-79cb6facda6e</onsuccess>
+  </stage>
+  <stage stageid="91c1af62-72ec-41d5-8906-ed46844ca010" name="End" type="End">
+    <subsheetid>47f15c03-2713-4429-b7bb-1e18f4645549</subsheetid>
+    <display x="15" y="90" w="120" h="60" />
+    <font family="Segoe UI" size="16" style="Bold" color="000000" />
+    <outputs>
+      <output type="number" name="Result_Child" narrative="Child Page Result" stage="Result_Child" />
+    </outputs>
+  </stage>
+  <stage stageid="51d5fe75-6eaf-4cbe-a185-fd87aa7ec42d" name="Child Page" type="SubSheet">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-15" w="90" h="60" />
+    <font family="Segoe UI" size="16" style="Bold" color="FF0000" />
+    <inputs>
+      <input type="number" name="Value 1 main" friendlyname="Value 1 main" narrative="Value 1 from Main Page" expr="[Value 1]" />
+      <input type="number" name="Value 2 Main" friendlyname="Value 2 Main" narrative="Value 2 from Main Page" expr="[Value 2]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Result_Child" friendlyname="Result_Child" narrative="Child Page Result" stage="Result_Main" />
+    </outputs>
+    <onsuccess>d26e424d-ecb1-4646-bf20-de79c0da8256</onsuccess>
+    <processid>47f15c03-2713-4429-b7bb-1e18f4645549</processid>
+  </stage>
+  <stage stageid="e7cb641d-6eaa-4f2f-9ec8-44fdf990632c" name="Data-1" type="Data">
+    <subsheetid>47f15c03-2713-4429-b7bb-1e18f4645549</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-195" y="-30" w="120" h="30" />
+    <font family="Segoe UI" size="16" style="Bold" color="FF0000" />
+    <datatype>number</datatype>
+    <initialvalue>0</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b285ef87-8bf7-4c9c-a3a0-4300f1c38215" name="Data-2" type="Data">
+    <subsheetid>47f15c03-2713-4429-b7bb-1e18f4645549</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-195" y="15" w="120" h="30" />
+    <font family="Segoe UI" size="16" style="Bold" color="FF0000" />
+    <datatype>number</datatype>
+    <initialvalue>0</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="213412ee-07b0-4b44-a500-79cb6facda6e" name="Add" type="Calculation">
+    <subsheetid>47f15c03-2713-4429-b7bb-1e18f4645549</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-15" w="90" h="60" />
+    <font family="Segoe UI" size="16" style="Bold" color="FF0000" />
+    <onsuccess>91c1af62-72ec-41d5-8906-ed46844ca010</onsuccess>
+    <calculation expression="[Data-1] + [Data-2]" stage="Result_Child" />
+  </stage>
+  <stage stageid="48bf695f-e7af-41ba-9af6-456154c2f25a" name="Result_Child" type="Data">
+    <subsheetid>47f15c03-2713-4429-b7bb-1e18f4645549</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-210" y="75" w="120" h="60" />
+    <font family="Segoe UI" size="16" style="Bold" color="FF0000" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+</process>

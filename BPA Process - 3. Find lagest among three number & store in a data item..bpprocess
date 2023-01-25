@@ -1,0 +1,97 @@
+﻿<process name="3. Find lagest among three number &amp; store in a data item." version="1.0" bpversion="7.1.2.3518" narrative="3. Find lagest among three number &amp; store in a data item." byrefcollection="true" preferredid="c8db3455-f3b1-4d32-80c2-07d7a569f160">
+  <view>
+    <camerax>-8</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.5625</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="5d793dfa-3835-4be9-b6c6-16ae06425259" name="Start" type="Start">
+    <display x="15" y="-120" w="90" h="60" />
+    <onsuccess>38bacb13-cda0-422c-89f4-9ba62c1e81fa</onsuccess>
+  </stage>
+  <stage stageid="85406027-71d9-4d5a-8028-8dedcd2bab21" name="End" type="End">
+    <display x="15" y="90" w="90" h="60" />
+  </stage>
+  <stage stageid="306d0d8e-9206-4b96-877e-273158761713" name="Stage1" type="ProcessInfo">
+    <display x="-210" y="-120" w="150" h="90" />
+  </stage>
+  <stage stageid="5e8c70a1-efef-4e2a-9a7d-6ed1524752fa" name="A" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-255" y="-30" />
+    <datatype>number</datatype>
+    <initialvalue>121</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="4b4a9637-7c48-41b1-93e6-bd3d9d9b3e5a" name="B" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-195" y="-30" />
+    <datatype>number</datatype>
+    <initialvalue>21</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="067f9385-147e-4b95-adf2-fc227e75b685" name="C" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-135" y="-30" />
+    <datatype>number</datatype>
+    <initialvalue>100</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="fc6d6ae1-6b89-4e4b-954c-60ac85e7edd1" name="Result" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-210" y="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f938ac4f-800c-4ae4-98e7-e5ff57798317" name="A &gt;" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <display x="-75" y="30" />
+    <onsuccess>85406027-71d9-4d5a-8028-8dedcd2bab21</onsuccess>
+    <calculation expression="&quot; A IS LARGER&quot;" stage="Result" />
+  </stage>
+  <stage stageid="e5adf7f6-731e-45eb-a65d-71ed1f7e5611" name="B&gt;" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <display x="90" y="30" />
+    <onsuccess>85406027-71d9-4d5a-8028-8dedcd2bab21</onsuccess>
+    <calculation expression="&quot;B IS LARGER&quot;" stage="Result" />
+  </stage>
+  <stage stageid="eac92121-47a1-4d8d-bd16-372998d369bb" name="C &gt;" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="30" />
+    <onsuccess>85406027-71d9-4d5a-8028-8dedcd2bab21</onsuccess>
+    <calculation expression="&quot;C IS LARGER&quot;" stage="Result" />
+  </stage>
+  <stage stageid="38bacb13-cda0-422c-89f4-9ba62c1e81fa" name="A &gt; B" type="Decision">
+    <display x="15" y="-60" />
+    <decision expression="[A] &gt; [B]" />
+    <ontrue>0834c339-8327-4931-8145-0ff975824bf1</ontrue>
+    <onfalse>5927d3a1-75b3-4846-abd2-39f9299de31d</onfalse>
+  </stage>
+  <stage stageid="0834c339-8327-4931-8145-0ff975824bf1" name="A &gt; C" type="Decision">
+    <display x="-30" y="-15" />
+    <decision expression="[A] &gt; [C]" />
+    <ontrue>f938ac4f-800c-4ae4-98e7-e5ff57798317</ontrue>
+    <onfalse>eac92121-47a1-4d8d-bd16-372998d369bb</onfalse>
+  </stage>
+  <stage stageid="5927d3a1-75b3-4846-abd2-39f9299de31d" name="B &gt; C" type="Decision">
+    <display x="60" y="-15" />
+    <decision expression="[B] &gt; [C]" />
+    <ontrue>e5adf7f6-731e-45eb-a65d-71ed1f7e5611</ontrue>
+    <onfalse>eac92121-47a1-4d8d-bd16-372998d369bb</onfalse>
+  </stage>
+  <stage stageid="b20c05d3-bfce-4886-8db2-feea206fdf4a" name="INPUT" type="Block">
+    <loginhibit onsuccess="true" />
+    <display x="-285" y="-60" w="195" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="147ae6a0-ebbb-4a56-9c6a-05cf1a937bb1" name="OUTPUT" type="Block">
+    <loginhibit onsuccess="true" />
+    <display x="-255" y="0" w="90" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+</process>

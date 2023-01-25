@@ -1,0 +1,103 @@
+﻿<process name="9. Multiple decision path using choice stage" version="1.0" bpversion="7.1.2.3518" narrative="9. Multiple decision path using choice stage" byrefcollection="true" preferredid="9fd40dfd-5246-4149-bd4e-c687d7ee4c99">
+  <view>
+    <camerax>267</camerax>
+    <cameray>-21</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="ca949195-4bb6-4b26-b670-b5c024b67bc9" name="Start" type="Start">
+    <display x="-30" y="-105" />
+    <onsuccess>a791f823-2227-4581-9e8a-62cb3794c9ae</onsuccess>
+  </stage>
+  <stage stageid="71ff4aca-2490-4050-bc84-4b11131d71db" name="End" type="End">
+    <display x="255" y="-45" />
+  </stage>
+  <stage stageid="e503e279-d5ef-41e5-82af-04d88070a951" name="Stage1" type="ProcessInfo">
+    <display x="-150" y="-90" w="150" h="90" />
+  </stage>
+  <stage stageid="70407b9f-7649-48ad-99ce-dbb2d5ec9494" name="Avg Marks" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-30" y="-45" />
+    <datatype>number</datatype>
+    <initialvalue>99</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="7b3440d6-fa1f-479c-b03b-8ef33ae57335" name="Result" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-30" y="15" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a791f823-2227-4581-9e8a-62cb3794c9ae" name="Choice1" type="ChoiceStart">
+    <display x="45" y="-105" />
+    <groupid>fb2b4437-0f4c-4e54-985c-92e7cca5bb39</groupid>
+    <choices>
+      <choice expression="[Avg Marks] &lt;= 100 AND [Avg Marks] &gt;= 80">
+        <name>Grade A</name>
+        <distance>60</distance>
+        <ontrue>7a158085-5d03-48f3-a20b-3958ae8a952e</ontrue>
+      </choice>
+      <choice expression="[Avg Marks] &lt; 80 AND [Avg Marks] &gt;= 60">
+        <name>Grade B</name>
+        <distance>120</distance>
+        <ontrue>af1b6055-9c7b-494e-9d29-76007212310b</ontrue>
+      </choice>
+    </choices>
+  </stage>
+  <stage stageid="e43d086a-9783-429b-adbe-21cbd740cd29" name="Otherwise1" type="ChoiceEnd">
+    <display x="45" y="75" />
+    <onsuccess>349524a3-1fb6-47d7-b451-7a5175c51887</onsuccess>
+    <groupid>fb2b4437-0f4c-4e54-985c-92e7cca5bb39</groupid>
+  </stage>
+  <stage stageid="7a158085-5d03-48f3-a20b-3958ae8a952e" name="A+/A" type="Decision">
+    <display x="105" y="-75" />
+    <decision expression="[Avg Marks] &gt;= 90" />
+    <ontrue>040c3b5f-c731-4cbc-9a2c-6ad8b021872a</ontrue>
+    <onfalse>434831f3-80e3-4eb6-9478-59c581ad9370</onfalse>
+  </stage>
+  <stage stageid="af1b6055-9c7b-494e-9d29-76007212310b" name="b+/ b" type="Decision">
+    <display x="105" y="0" />
+    <decision expression="[Avg Marks] &gt;80" />
+    <ontrue>08c2cb1a-7a77-4b41-8161-e58b2f6dd6fa</ontrue>
+    <onfalse>b53f75a8-46a2-4618-bbef-8f405928a838</onfalse>
+  </stage>
+  <stage stageid="434831f3-80e3-4eb6-9478-59c581ad9370" name="A" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <narrative>A</narrative>
+    <display x="180" y="-60" />
+    <onsuccess>71ff4aca-2490-4050-bc84-4b11131d71db</onsuccess>
+    <calculation expression="&quot;A&quot;" stage="Result" />
+  </stage>
+  <stage stageid="08c2cb1a-7a77-4b41-8161-e58b2f6dd6fa" name="B+" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <narrative>B+</narrative>
+    <display x="180" y="-15" />
+    <onsuccess>71ff4aca-2490-4050-bc84-4b11131d71db</onsuccess>
+    <calculation expression="&quot;B+&quot;" stage="Result" />
+  </stage>
+  <stage stageid="b53f75a8-46a2-4618-bbef-8f405928a838" name="B" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <narrative>B</narrative>
+    <display x="180" y="30" />
+    <onsuccess>71ff4aca-2490-4050-bc84-4b11131d71db</onsuccess>
+    <calculation expression="&quot;B&quot;" stage="Result" />
+  </stage>
+  <stage stageid="349524a3-1fb6-47d7-b451-7a5175c51887" name="NA" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <narrative>NA</narrative>
+    <display x="180" y="75" />
+    <onsuccess>71ff4aca-2490-4050-bc84-4b11131d71db</onsuccess>
+    <calculation expression="&quot;NA&quot;" stage="Result" />
+  </stage>
+  <stage stageid="040c3b5f-c731-4cbc-9a2c-6ad8b021872a" name="A+" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <narrative>A+</narrative>
+    <display x="180" y="-105" />
+    <onsuccess>71ff4aca-2490-4050-bc84-4b11131d71db</onsuccess>
+    <calculation expression="&quot;A+&quot;" stage="Result" />
+  </stage>
+</process>

@@ -1,0 +1,67 @@
+﻿<process name="Using Environment variable perform addition of two number" version="1.0" bpversion="7.1.2.3518" narrative="Using Environment variable perform addition of two number" byrefcollection="true" preferredid="ce3244b2-4c14-48b8-81fd-9e7efa114e79">
+  <view>
+    <camerax>-83</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="823afbd3-2e34-4cec-b3f3-4cc8f5c7128e" name="Start" type="Start">
+    <display x="-30" y="-105" w="90" h="60" />
+    <font family="Segoe UI" size="16" style="Bold" color="000000" />
+    <onsuccess>81db235f-0319-4202-96e0-c34ee93d7a6c</onsuccess>
+  </stage>
+  <stage stageid="96986dc6-e3e7-4d5b-9262-cf0150021f16" name="End" type="End">
+    <display x="-30" y="75" w="90" h="60" />
+    <font family="Segoe UI" size="16" style="Bold" color="000000" />
+  </stage>
+  <stage stageid="4c58c99c-85ff-4085-a8d2-fc62f47099c3" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="81db235f-0319-4202-96e0-c34ee93d7a6c" name="Addition" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <display x="-30" y="-15" w="120" h="60" />
+    <font family="Segoe UI" size="16" style="Bold" color="000000" />
+    <onsuccess>96986dc6-e3e7-4d5b-9262-cf0150021f16</onsuccess>
+    <calculation expression="[Data-1] + [Data-2]" stage="Result" />
+  </stage>
+  <stage stageid="5a3da669-3a34-460c-b403-c4c03df45da1" name="Data-1" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-240" y="-15" w="90" h="60" />
+    <font family="Segoe UI" size="16" style="Bold" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <exposure>Environment</exposure>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="24cec72c-185a-4a7c-bc92-9b5ce5c57b0c" name="Data-2" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-150" y="-15" w="90" h="60" />
+    <font family="Segoe UI" size="16" style="Bold" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <exposure>Environment</exposure>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="10733d0c-1a6e-425d-a09e-7cadba893265" name="Result" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-195" y="75" w="90" h="60" />
+    <font family="Segoe UI" size="16" style="Bold" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="405f1011-ff67-4865-ad83-294be7ee992e" name="Input" type="Block">
+    <loginhibit onsuccess="true" />
+    <display x="-300" y="-60" w="210" h="90" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="bea984cd-88b7-4282-9735-c46d7c586f6b" name="Output" type="Block">
+    <loginhibit onsuccess="true" />
+    <display x="-300" y="45" w="210" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+</process>

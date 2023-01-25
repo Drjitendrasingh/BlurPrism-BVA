@@ -1,0 +1,100 @@
+﻿<process name="5. Display the Grade according to Avg marks" version="1.0" bpversion="7.1.2.3518" narrative="5. Display the Grade according to Avg marks" byrefcollection="true" preferredid="a8ab0f0c-56d6-4800-a117-05b5f0b48be3">
+  <view>
+    <camerax>180</camerax>
+    <cameray>69</cameray>
+    <zoom version="2">0.625</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="c5187d3b-6aed-4716-9e25-c6fb41650d0c" name="Stage1" type="ProcessInfo">
+    <display x="-165" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="3503f9cb-3880-4fd8-9a3b-c52ecec01982" name="Start" type="Start">
+    <display x="-45" y="-120" />
+    <onsuccess>74416188-1273-4e5f-b75a-d8e435c18577</onsuccess>
+  </stage>
+  <stage stageid="541b8879-86e8-46e4-a8d3-a6e2cdc686f1" name="End" type="End">
+    <display x="180" y="-15" />
+  </stage>
+  <stage stageid="f2a96a28-fadd-4b9d-9888-0094bfdb6d63" name="Avg Marks" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-195" y="-15" />
+    <datatype>number</datatype>
+    <initialvalue>70</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f6079a2a-484f-4907-9fdf-4a1956bcff14" name="Result" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-135" y="-15" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="74416188-1273-4e5f-b75a-d8e435c18577" name="Choice1" type="ChoiceStart">
+    <display x="30" y="-120" />
+    <groupid>920d0024-27cf-47da-b115-11227e7a5672</groupid>
+    <choices>
+      <choice expression="[Avg Marks] &lt;= 100 AND [Avg Marks] &gt;= 80">
+        <name>Grade A</name>
+        <distance>45</distance>
+        <ontrue>2e1cf85f-f8ca-44a4-9a15-6782d85a51f8</ontrue>
+      </choice>
+      <choice expression="[Avg Marks] &lt; 80 AND [Avg Marks] &gt;= 60">
+        <name>Grade B</name>
+        <distance>90</distance>
+        <ontrue>bf313bc6-4956-4516-923a-3691ecee2906</ontrue>
+      </choice>
+      <choice expression="[Avg Marks] &lt; 60 AND [Avg Marks] &gt;= 40">
+        <name>Grade C</name>
+        <distance>135</distance>
+        <ontrue>118de19f-084c-42c7-ada9-8d1fa8ed0a9d</ontrue>
+      </choice>
+      <choice expression="[Avg Marks] &lt; 40 AND [Avg Marks] &gt;= 0">
+        <name>Grade D</name>
+        <distance>180</distance>
+        <ontrue>0be8bffe-4aea-4448-9cdd-a3c62968581c</ontrue>
+      </choice>
+    </choices>
+  </stage>
+  <stage stageid="f2db6898-c2f8-46ba-90c4-569f311ff6b1" name="Otherwise1" type="ChoiceEnd">
+    <display x="30" y="105" />
+    <onsuccess>309ebe7d-b665-4e62-9650-eab05e439653</onsuccess>
+    <groupid>920d0024-27cf-47da-b115-11227e7a5672</groupid>
+  </stage>
+  <stage stageid="2e1cf85f-f8ca-44a4-9a15-6782d85a51f8" name="A Grade" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <narrative>A Grade</narrative>
+    <display x="90" y="-75" />
+    <onsuccess>541b8879-86e8-46e4-a8d3-a6e2cdc686f1</onsuccess>
+    <calculation expression="&quot;A Grade&quot;" stage="Result" />
+  </stage>
+  <stage stageid="bf313bc6-4956-4516-923a-3691ecee2906" name="B Grade" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <narrative>B Grade</narrative>
+    <display x="90" y="-30" />
+    <onsuccess>541b8879-86e8-46e4-a8d3-a6e2cdc686f1</onsuccess>
+    <calculation expression="&quot;B Grade&quot;" stage="Result" />
+  </stage>
+  <stage stageid="118de19f-084c-42c7-ada9-8d1fa8ed0a9d" name="C Grade" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <narrative>C Grade</narrative>
+    <display x="90" y="15" />
+    <onsuccess>541b8879-86e8-46e4-a8d3-a6e2cdc686f1</onsuccess>
+    <calculation expression="&quot;C Grade&quot;" stage="Result" />
+  </stage>
+  <stage stageid="0be8bffe-4aea-4448-9cdd-a3c62968581c" name="D Grade" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <narrative>D Grade</narrative>
+    <display x="90" y="60" />
+    <onsuccess>541b8879-86e8-46e4-a8d3-a6e2cdc686f1</onsuccess>
+    <calculation expression="&quot;D Grade&quot;" stage="Result" />
+  </stage>
+  <stage stageid="309ebe7d-b665-4e62-9650-eab05e439653" name="NA" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <narrative>NA</narrative>
+    <display x="150" y="105" />
+    <calculation expression="&quot;NA&quot;" stage="Result" />
+  </stage>
+</process>

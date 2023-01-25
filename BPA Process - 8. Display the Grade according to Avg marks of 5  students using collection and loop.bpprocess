@@ -1,0 +1,143 @@
+﻿<process name="8. Display the Grade according to Avg marks of 5  students using collection and loop" version="1.0" bpversion="7.1.2.3518" narrative="8. Display the Grade according to Avg marks of 5  students using collection and loop" byrefcollection="true" preferredid="90b39ca7-5dc7-4d34-9188-f10aa2297629">
+  <view>
+    <camerax>121</camerax>
+    <cameray>21</cameray>
+    <zoom version="2">1.5625</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="f4b59fb1-5648-405b-8527-5c2bd1bbe846" name="Start" type="Start">
+    <display x="-90" y="-105" />
+    <onsuccess>b799e86c-761d-4c01-9e2c-9884297eca84</onsuccess>
+  </stage>
+  <stage stageid="a35ecdad-4595-4f78-ab84-8c1dbfc8bb10" name="End" type="End">
+    <display x="195" y="75" />
+  </stage>
+  <stage stageid="2115f766-5822-4c88-9d8f-44df4b92faeb" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="de8bc3b2-ffb9-46aa-a478-432fd63f78a4" name="Students" type="Collection">
+    <display x="-45" y="0" w="150" h="120" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Name" type="text" description="Student's Name" />
+      <field name="Roll Number" type="number" description="Student's Roll Number" />
+      <field name="Average Marks" type="number" description="Student's Avg Marks scored" />
+      <field name="Grade" type="text" description="Student's Grade" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="Name" type="text" value="Aman" />
+        <field name="Roll Number" type="number" value="1" />
+        <field name="Average Marks" type="number" value="99" />
+        <field name="Grade" type="text" value="" />
+      </row>
+      <row>
+        <field name="Name" type="text" value="Bhanu" />
+        <field name="Roll Number" type="number" value="2" />
+        <field name="Average Marks" type="number" value="77" />
+        <field name="Grade" type="text" value="" />
+      </row>
+      <row>
+        <field name="Name" type="text" value="Chetan" />
+        <field name="Roll Number" type="number" value="3" />
+        <field name="Average Marks" type="number" value="55" />
+        <field name="Grade" type="text" value="" />
+      </row>
+      <row>
+        <field name="Name" type="text" value="Dharmendra" />
+        <field name="Roll Number" type="number" value="4" />
+        <field name="Average Marks" type="number" value="99" />
+        <field name="Grade" type="text" value="" />
+      </row>
+      <row>
+        <field name="Name" type="text" value="Eswar" />
+        <field name="Roll Number" type="number" value="5" />
+        <field name="Average Marks" type="number" value="44" />
+        <field name="Grade" type="text" value="" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="402840f9-cc18-4fd5-9d15-c5cb3523fd3a" name="GRADING" type="ChoiceStart">
+    <display x="60" y="-105" />
+    <groupid>839411e4-a035-4fca-939c-2c2475d27fe9</groupid>
+    <choices>
+      <choice expression="[Students.Average Marks] &lt;= 100 AND [Students.Average Marks] &gt;= 80">
+        <name>Grade A</name>
+        <distance>45</distance>
+        <ontrue>ecda03d6-7e2f-4ac5-8bfd-2ea520607c57</ontrue>
+      </choice>
+      <choice expression="[Students.Average Marks] &lt; 80 AND [Students.Average Marks] &gt;= 60">
+        <name>Grade B</name>
+        <distance>90</distance>
+        <ontrue>a65ea1ee-0127-448c-b37a-8cf2163cba4d</ontrue>
+      </choice>
+      <choice expression="[Students.Average Marks] &lt; 60 AND [Students.Average Marks] &gt;= 40">
+        <name>Grade C</name>
+        <distance>135</distance>
+        <ontrue>c0c5102d-11a6-4c04-9be2-d57855cc1b63</ontrue>
+      </choice>
+      <choice expression="[Students.Average Marks] &lt; 40 AND [Students.Average Marks] &gt;= 0">
+        <name>Grade D</name>
+        <distance>180</distance>
+        <ontrue>b94db430-8b42-47aa-8f57-f10745bdd889</ontrue>
+      </choice>
+    </choices>
+  </stage>
+  <stage stageid="6a767052-6a52-4d52-9a97-0d097e9c0ccf" name="Otherwise1" type="ChoiceEnd">
+    <display x="60" y="120" />
+    <onsuccess>19626ac9-a4ff-4206-b7ab-ac38e37887ec</onsuccess>
+    <groupid>839411e4-a035-4fca-939c-2c2475d27fe9</groupid>
+  </stage>
+  <stage stageid="b799e86c-761d-4c01-9e2c-9884297eca84" name="Loop Start1" type="LoopStart">
+    <loginhibit onsuccess="true" />
+    <display x="-15" y="-105" />
+    <onsuccess>402840f9-cc18-4fd5-9d15-c5cb3523fd3a</onsuccess>
+    <groupid>ba367421-ed1c-466e-8829-15c4bd35fc63</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>Students</loopdata>
+  </stage>
+  <stage stageid="054749e0-e637-4e2d-8e18-dff27cd4f38d" name="Loop End1" type="LoopEnd">
+    <loginhibit onsuccess="true" />
+    <display x="195" y="15" />
+    <onsuccess>a35ecdad-4595-4f78-ab84-8c1dbfc8bb10</onsuccess>
+    <groupid>ba367421-ed1c-466e-8829-15c4bd35fc63</groupid>
+  </stage>
+  <stage stageid="ecda03d6-7e2f-4ac5-8bfd-2ea520607c57" name="A" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <narrative>A</narrative>
+    <display x="105" y="-60" />
+    <onsuccess>054749e0-e637-4e2d-8e18-dff27cd4f38d</onsuccess>
+    <calculation expression="&quot;A&quot;" stage="Students.Grade" />
+  </stage>
+  <stage stageid="a65ea1ee-0127-448c-b37a-8cf2163cba4d" name="B" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <narrative>B</narrative>
+    <display x="105" y="-15" />
+    <onsuccess>054749e0-e637-4e2d-8e18-dff27cd4f38d</onsuccess>
+    <calculation expression="&quot;B&quot;" stage="Students.Grade" />
+  </stage>
+  <stage stageid="c0c5102d-11a6-4c04-9be2-d57855cc1b63" name="C" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <narrative>C</narrative>
+    <display x="105" y="30" />
+    <onsuccess>054749e0-e637-4e2d-8e18-dff27cd4f38d</onsuccess>
+    <calculation expression="&quot;C&quot;" stage="Students.Grade" />
+  </stage>
+  <stage stageid="b94db430-8b42-47aa-8f57-f10745bdd889" name="D" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <narrative>D</narrative>
+    <display x="105" y="75" />
+    <onsuccess>054749e0-e637-4e2d-8e18-dff27cd4f38d</onsuccess>
+    <calculation expression="&quot;D&quot;" stage="Students.Grade" />
+  </stage>
+  <stage stageid="19626ac9-a4ff-4206-b7ab-ac38e37887ec" name="NA" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <narrative>NA</narrative>
+    <display x="135" y="120" />
+    <onsuccess>054749e0-e637-4e2d-8e18-dff27cd4f38d</onsuccess>
+    <calculation expression="&quot;NA&quot;" stage="Students.Grade" />
+  </stage>
+</process>

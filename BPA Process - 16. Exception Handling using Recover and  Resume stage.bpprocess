@@ -1,0 +1,49 @@
+﻿<process name="16. Exception Handling using Recover and  Resume stage" version="1.0" bpversion="7.1.2.3518" narrative="16. Exception Handling using Recover and  Resume stage" byrefcollection="true" preferredid="e3eca490-10d6-450c-9abf-a5b84d5b586d">
+  <view>
+    <camerax>36</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="eebb788e-4f44-4f20-8451-56232c55c702" name="Start" type="Start">
+    <display x="-75" y="-120" />
+    <font family="Segoe UI" size="16" style="Bold" color="000000" />
+    <onsuccess>0ac99f54-5ca3-49e4-89d9-13001ecd3794</onsuccess>
+  </stage>
+  <stage stageid="8ae36a15-3291-4965-81e5-d075c104095c" name="End" type="End">
+    <display x="-75" y="0" />
+    <font family="Segoe UI" size="16" style="Bold" color="000000" />
+  </stage>
+  <stage stageid="431fa63a-f980-4b1b-9cdb-65fe5deac234" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="0ac99f54-5ca3-49e4-89d9-13001ecd3794" name="Division" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <display x="-75" y="-60" />
+    <font family="Segoe UI" size="16" style="Bold" color="FF0000" />
+    <onsuccess>8ae36a15-3291-4965-81e5-d075c104095c</onsuccess>
+    <calculation expression="10 / 0" stage="Result" />
+  </stage>
+  <stage stageid="9655aee8-36f5-43d6-9e11-8ea624a87576" name="Result" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-210" y="-15" w="90" h="60" />
+    <font family="Segoe UI" size="16" style="Bold" color="FF0000" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="34e369c3-3765-4f35-9aff-9eec06a70f0b" name="Recover1" type="Recover">
+    <loginhibit />
+    <display x="15" y="-120" />
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+    <onsuccess>7cfe4f01-0ffd-470e-964d-ea8f467be69c</onsuccess>
+  </stage>
+  <stage stageid="7cfe4f01-0ffd-470e-964d-ea8f467be69c" name="Resume1" type="Resume">
+    <loginhibit />
+    <display x="15" y="0" />
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+    <onsuccess>8ae36a15-3291-4965-81e5-d075c104095c</onsuccess>
+  </stage>
+</process>

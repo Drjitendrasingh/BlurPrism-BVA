@@ -1,0 +1,83 @@
+﻿<process name="10. Increment using Circular path excercise using page references" version="1.0" bpversion="7.1.2.3518" narrative="10. Increment using Circular path excercise using page references" byrefcollection="true" preferredid="e4100fcc-7309-46e2-802a-af326bf79dd8">
+  <view>
+    <camerax>-55</camerax>
+    <cameray>55</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <subsheet subsheetid="e7447aaf-174f-4738-a7a3-b9c6a6009b22" type="Normal" published="False">
+    <name>Page 1</name>
+    <view>
+      <camerax>-127</camerax>
+      <cameray>61</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="4edebdf2-627e-4831-88a5-29d97f79d060" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="5c7a526b-e164-4a85-b5b8-d6d0e4c090f9" name="Counter" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-255" y="0" w="90" h="60" />
+    <font family="Segoe UI" size="16" style="Bold" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue>0</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="6434990a-83d8-439b-9e6b-b92d0c374a98" name="Max Count" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-45" y="0" w="90" h="60" />
+    <font family="Segoe UI" size="16" style="Bold" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue>5</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="596f01e4-01e9-42e1-8169-6e2afabc1ca1" name="Start" type="Start">
+    <display x="-150" y="-15" w="90" h="30" />
+    <font family="Segoe UI" size="16" style="Bold" color="000000" />
+    <onsuccess>c6d7d9de-3dd4-48ef-8825-9b91cb15f8c0</onsuccess>
+  </stage>
+  <stage stageid="afa835b6-1282-44ba-9f9a-1d8d5f47a2a3" name="End" type="End">
+    <display x="-150" y="180" w="90" h="30" />
+    <font family="Segoe UI" size="16" style="Bold" color="000000" />
+  </stage>
+  <stage stageid="c6d7d9de-3dd4-48ef-8825-9b91cb15f8c0" name="Incement" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <display x="-150" y="45" w="90" h="60" />
+    <font family="Segoe UI" size="16" style="Bold" color="000000" />
+    <onsuccess>e7970e32-c054-40f4-b031-34297b3491ed</onsuccess>
+    <calculation expression="[Counter] + 1" stage="Counter" />
+  </stage>
+  <stage stageid="e7970e32-c054-40f4-b031-34297b3491ed" name="C = MC" type="Decision">
+    <display x="-150" y="120" w="90" h="60" />
+    <font family="Segoe UI" size="16" style="Bold" color="000000" />
+    <decision expression="[Counter] = [Max Count]" />
+    <ontrue>afa835b6-1282-44ba-9f9a-1d8d5f47a2a3</ontrue>
+    <onfalse>30538b18-41ac-42ea-85ea-2a89e5d0a8fd</onfalse>
+  </stage>
+  <stage stageid="65df978b-1fe5-4c74-ada9-b155e9863acc" name="Page 1" type="SubSheetInfo">
+    <subsheetid>e7447aaf-174f-4738-a7a3-b9c6a6009b22</subsheetid>
+    <display x="-195" y="-105" w="300" h="90" />
+  </stage>
+  <stage stageid="42638610-d24c-4c94-9de2-1664bf277191" name="Start" type="Start">
+    <subsheetid>e7447aaf-174f-4738-a7a3-b9c6a6009b22</subsheetid>
+    <display x="-180" y="-15" w="120" h="30" />
+    <font family="Segoe UI" size="16" style="Bold" color="000000" />
+    <onsuccess>17cb2700-7f3e-4f69-85c2-d57323bde745</onsuccess>
+  </stage>
+  <stage stageid="17cb2700-7f3e-4f69-85c2-d57323bde745" name="End" type="End">
+    <subsheetid>e7447aaf-174f-4738-a7a3-b9c6a6009b22</subsheetid>
+    <display x="-180" y="90" w="120" h="30" />
+    <font family="Segoe UI" size="16" style="Bold" color="000000" />
+  </stage>
+  <stage stageid="30538b18-41ac-42ea-85ea-2a89e5d0a8fd" name="Page 1" type="SubSheet">
+    <loginhibit onsuccess="true" />
+    <display x="-255" y="75" />
+    <font family="Segoe UI" size="16" style="Bold" color="000000" />
+    <onsuccess>c6d7d9de-3dd4-48ef-8825-9b91cb15f8c0</onsuccess>
+    <processid>e7447aaf-174f-4738-a7a3-b9c6a6009b22</processid>
+  </stage>
+</process>
